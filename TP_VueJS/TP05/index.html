@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+    <div v-for="fruit in fruits" class="fruit-container">
+        <p>{{fruit.name}} vendu {{fruit.price}}€</p>
+        <span v-if='fruit.inStock' class="fruit-stock fruit-stock-container">En Stock</span>
+        <span v-else class="fruit-epuise fruit-stock-container">Rupture</span>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+
+    Vue.createApp({
+    setup() {
+        let fruits = Vue.ref([
+            {
+                name: 'Banane',
+                price: 0.7,
+                inStock: true,
+            },
+            {
+                name: 'Kiwi',
+                price: 2.5,
+                inStock: true,
+            },
+            {
+                name: 'Fraise',
+                price: 3.0,
+                inStock: false,
+            },
+            {
+                name: 'Citron',
+                price: 0.5,
+                inStock: true,
+            },
+            {
+                name: 'Framboise',
+                price: 1.6,
+                inStock: false,
+            },
+        ])
+        return{
+            fruits
+        }
+    }
+}).mount('#app')
+
+</script>
+
+</body>
+</html>
