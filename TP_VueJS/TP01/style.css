@@ -3,7 +3,8 @@
   margin-left: auto;
   margin-right: auto;
   width: 25%;
-  background-color: gray;
+  background: linear-gradient(to right, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   padding: 25px;
   border-radius: 50px;
 }
@@ -20,7 +21,7 @@ color: white;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;            
-  box-shadow: 0 0 20px #eee;
+  box-shadow: 0 0 20px #000000;
   border-radius: 10px;
   display: block;
   border-radius: 50%;
