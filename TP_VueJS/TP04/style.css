@@ -1,0 +1,30 @@
+nav{
+    display: flex; 
+    justify-content: space-around;
+    background-color: gray;
+    padding: 5px;
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+}
+
+a:hover{
+    color: white;
+    background-color: darkgray;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.img-profil{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+    <header>
+
+        <nav>
+
+            <a href="#">Accueil</a>
+            <a href="#">Boutique</a>
+            <a href="#">Contact</a>
+            <a href="#" v-if="!isConnected">Connexion</a>
+            <a href="#" v-else> <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Photo de Profil" class="img-profil">Sylvain</a>
+
+        </nav>
+
+    </header>
+
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+
+    Vue.createApp({
+    setup() {
+        let isConnected = Vue.ref(true)
+        return{
+            isConnected
+        }
+    }
+}).mount('#app')
+
+</script>
+
+</body>
+</html>
