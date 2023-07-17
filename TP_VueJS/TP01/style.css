@@ -1,0 +1,63 @@
+#compteur{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  background-color: gray;
+  padding: 25px;
+  border-radius: 50px;
+}
+
+#nb-compteur{
+font-size: 40px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+text-align: center;
+color: white;
+}
+.btn-grad {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
+  margin: 10px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+}
+
+.btn-global{
+  border: none;
+  color: white;
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+.btn-global:hover{
+  background-color: rgb(92, 0, 0);
+}
+
+.btn-global:active{
+  background-color: rgb(50, 0, 0);
+}
+.btn-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+h1{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+         
