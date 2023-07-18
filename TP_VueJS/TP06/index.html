@@ -27,7 +27,7 @@
               </div>
             </div>
             <div class="social-media-container">
-                <p>Réseaux Sociaux:</p>
+                <p v-if="profil.socials != null">Réseaux Sociaux:</p>
                 <p v-if="profil.socials == null">Pas de réseaux sociaux associés.</p>
                 <a v-for="social in profil.socials" v-bind:href="social.socialLink" class="link-social"><i v-bind:class="social.socialIcon"></i>{{social.socialName}}</a>
 

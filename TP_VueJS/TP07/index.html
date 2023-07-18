@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KICÉKI VEUX MES PROFILS ???</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+
+      <div v-show="isOpen" class="modal-container">
+        <div>
+          <button v-on:click="switchModal">X</button>
+
+          <h2>Bienvenue</h2>
+        
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, odit? Neque alias corrupti libero, voluptatem ullam quo labore. Unde, odit dolore minima sequi tempore omnis.</p>
+          
+          <button v-on:click="switchModal">Merci !</button>
+        </div>
+        
+      </div>
+
+      <button v-on:click="switchModal">Modal</button>
+
+    </div>
+
+    <script>
+      Vue.createApp({
+        setup() {
+          let isOpen = Vue.ref(false)
+
+          const switchModal = () => {
+            if(!isOpen.value){
+              isOpen.value = true
+            }else{
+              isOpen.value = false
+            }
+          }
+
+          return {
+            switchModal,
+            isOpen,
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

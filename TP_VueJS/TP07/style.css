@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+.modal-container{
+    position: absolute;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-container div{
+    width: 50%;
+    margin-left: 25%;
+    background-color: white;
+    padding: 20px;
+}
