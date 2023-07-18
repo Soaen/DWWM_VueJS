@@ -1,9 +1,24 @@
 .fruit-container{
     display: flex;
     flex-direction: row;
-    margin: 10px;
+    margin: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     justify-content: space-between;
+    color: white;
+    font-size: 24px;
+    
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 50px;
+}
+
+body{
+    background-color: rgb(28, 28, 35);
 }
 
 p{
@@ -11,20 +26,29 @@ p{
 }
 
 .fruit-stock-container{
+    display: flex;
     margin-left: 10px;
     color: white;
-    height: 48px;
-    width: 90px;
+    padding: 8px;
     text-align: center;
+    justify-content: center;
 }
 
 .fruit-stock{
     background-color: rgb(84, 151, 84);
-    border-radius: 20px;
+    border-radius: 25px;
 }
 
 .fruit-epuise{
     background-color: rgb(224, 60, 60);
-    border-radius: 20px;
+    border-radius: 25px;
 
+}
+
+.img-fruit{
+    height: 400px;
+    width: 90%;
+    overflow: hidden;
+    object-fit: cover;
+    margin-left: 5%;
 }

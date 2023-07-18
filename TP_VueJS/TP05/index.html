@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">
 
+    <h1>Kicéki veux mes fruits ?</h1>
+
+    <img src="images/1_1000x1000.webp" alt="Panier de fruit" class="img-fruit">
+        
     <div v-for="fruit in fruits" class="fruit-container">
-        <p>{{fruit.name}} vendu {{fruit.price}}€</p>
+        <p>{{fruit.icon}} {{fruit.name}} au prix de {{fruit.price}}€</p>
         <span v-if='fruit.inStock' class="fruit-stock fruit-stock-container">En Stock</span>
         <span v-else class="fruit-epuise fruit-stock-container">Rupture</span>
     </div>
 
 </div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script>
 
     Vue.createApp({
@@ -28,26 +32,31 @@
                 name: 'Banane',
                 price: 0.7,
                 inStock: true,
+                icon: '🍌',
             },
             {
                 name: 'Kiwi',
                 price: 2.5,
                 inStock: true,
+                icon: '🥝',
             },
             {
                 name: 'Fraise',
                 price: 3.0,
                 inStock: false,
+                icon: '🍓',
             },
             {
                 name: 'Citron',
                 price: 0.5,
                 inStock: true,
+                icon: '🍋',
             },
             {
-                name: 'Framboise',
+                name: 'Cerise',
                 price: 1.6,
                 inStock: false,
+                icon: '🍒',
             },
         ])
         return{
