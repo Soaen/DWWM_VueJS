@@ -1,0 +1,63 @@
+.profil-article{
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: space-between;
+    color: white;
+    background-color: rgb(59, 59, 130);
+    padding: 30px;
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    margin-top: 32px;
+    margin-bottom: 50px;
+}
+
+body{
+    background-color: rgb(56, 56, 82);
+}
+
+p{
+    margin: 0;
+}
+
+img{
+    width: 64px;
+    border-radius: 50%;
+}
+
+.link-social{
+    text-decoration: underline;
+    color: yellow;
+    margin: 6px;
+}
+
+.profils-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.profil-desc{
+    display: flex;
+}
+
+.premium-badge{
+    position: relative;
+    right: 10px;
+    top:40px;
+}
+
+.social-media-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.social-media-title{
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
