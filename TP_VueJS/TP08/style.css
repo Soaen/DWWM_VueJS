@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+.modal-container{
+    position: absolute;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-container div{
+    width: 50%;
+    margin-left: 25%;
+    background-color: white;
+    padding: 20px;
+}
+
+.list-cours{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cours-container{
+    width: 80%;
+    margin-left: 10%;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    line-height: 50px;
+}
+
+.cours-name-price{
+    display: flex;
+}
+
+.modal-cours-container{
+    display: flex;
+}
+
+.modal-cours-container button{
+    height: 20px;
+}

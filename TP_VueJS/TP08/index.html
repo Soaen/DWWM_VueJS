@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KICÉKI VEUX MES FORMATIONS ???</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+
+      <div v-show="isOpen" class="modal-container">
+        <div>
+          <div class="modal-cours-container">
+
+            <h2>Êtes-vous sûr de vouloir acheter ce cours ?</h2>
+            <button v-on:click="switchModal">X</button>
+
+          </div>
+
+          <p>Voulez-vous vraiment acheter ce cours {{selectedCours.name}} à {{selectedCours.price}}€ ?</p>
+          
+          <div>
+            <button v-on:click="switchModal">Annuler</button>
+            <button v-on:click="switchModal">Acheter</button>
+          </div>
+
+        </div>
+        
+      </div>
+
+      <h1>Choisissez un cours de programmation</h1>
+
+      <div class="cours-container">
+
+        <div v-for="cours in listCours" class="list-cours">
+
+            <div class="cours-name-price">
+              <p>{{cours.name}}</p>
+              <p>{{cours.price}}€</p>
+            </div>
+
+            <button v-on:click="switchModal(cours)">Acheter</button>
+
+        </div>
+        
+      </div>
+
+    </div>
+
+    <script>
+      Vue.createApp({
+        setup() {
+          let isOpen = Vue.ref(false)
+          let selectedCours = Vue.ref("");
+          let coursPrix = Vue.ref("");
+
+          const listCours = Vue.ref({
+            javascript:{
+              name: "JavaScript",
+              price: 0.99,
+            },
+            java:{
+              name: "Java",
+              price: 1.99,
+            },
+            html:{
+              name: "HTML",
+              price: 1999.99,
+            },
+            css:{
+              name: "CSS",
+              price: 19999.99,
+            },
+          })
+
+          const switchModal = (e) => {
+            if(!isOpen.value){
+              selectedCours.value = e
+              isOpen.value = true
+            }else{
+              isOpen.value = false
+            }
+          }
+
+          return {
+            switchModal,
+            isOpen,
+            listCours,
+            selectedCours,
+
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
