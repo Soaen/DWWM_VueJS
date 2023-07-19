@@ -1,0 +1,48 @@
+body{
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(30, 38, 84);
+}
+
+p{
+    margin: 0;
+}
+
+.todo-list{
+    display: flex;
+    background-color: white;
+    padding: 15px;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.lists-container{
+    display: flex;
+    width: 100%;
+}
+
+.list-solo{
+    width: 50%;
+}
+
+.red-error{
+    border: 1px red solid;
+}
+
+.finished-task{
+    text-decoration: line-through;
+}
+
+.tache-container{
+    height: 90vh;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5vh;
+    background-color: rgb(238, 238, 238);
+}
+
+.tache-after{
+    padding-top: 20px;
+    margin: 32px;
+    height: 100%;
+}

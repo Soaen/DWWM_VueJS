@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KICÉKI VEUX MES PROFILS ???</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1a56f0a0c1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <div id="app">
+      
+      <div class="tache-container">
+        <div class="tache-after">
+          <h1>Vrello - Gestion des tâches</h1>
+          <p>Gérez vos tâches avec Vue.js</p>
+        <div>
+          <input type="text" name="tache-add" id="tache-add" v-model="userSaisie" :class="listTodos.includes(userSaisie) ? 'red-error' : ''">
+          <button @click="pushIntoTodosList(userSaisie)">Ajouter</button>
+        </div>
+        <div class="lists-container">
+           
+          <div class="list-solo">
+            <h2>A faire ({{listTodos.length}})</h2>
+              <div v-for="(todo, index) in listTodos" class="todo-list">
+                <p>{{todo}}</p>
+                <input type="checkbox" name="switchToFinished" id="switchToFinished" @click.prevent="switchToFinished(index, todo)">
+              </div>
+          </div>
+
+          <div class="list-solo">
+          <h2>Terminées ({{listFinished.length}})</h2>
+            <div v-for="(finished, index) in listFinished" class="todo-list">
+              <p class="finished-task">{{finished}}</p>
+              <div>
+                <input type="checkbox" name="switchToFinished" id="switchToFinished" @click.prevent='' checked>
+                <button @click="deleteFromFinishedList(index)">Supprimer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+    <script>
+      Vue.createApp({
+        setup() {
+          let listTodos = Vue.ref([])
+          let listFinished = Vue.ref([])
+          let userSaisie = Vue.ref()
+          const pushIntoTodosList = (e) => {
+            if(!listTodos.value.includes(e)){
+              listTodos.value.push(e)
+            }else{
+
+            }
+            
+          }
+
+          const switchToFinished = (e, todo) => {
+            listTodos.value.splice(e, 1);
+            listFinished.value.push(todo)
+          }
+
+          const deleteFromFinishedList = (e) => {
+            listFinished.value.splice(e, 1)
+          }
+
+          return {
+            listTodos,
+            listFinished,
+            pushIntoTodosList,
+            userSaisie,
+            switchToFinished,
+            deleteFromFinishedList,
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
