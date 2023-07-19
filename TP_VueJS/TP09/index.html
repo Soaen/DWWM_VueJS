@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KICÉKI VEUX MES PROFILS ???</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1a56f0a0c1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <div id="app">
+      <h1>Listing des utilisateurs du site</h1>
+      <div class="stream-container">
+        <span>mode streamer</span>
+
+        <input type="checkbox" name="streamer-mode" id="streamer-mode" v-model="isStreamerMode">
+        
+      </div>
+      <div class="profils-container">
+        <div v-for="profil in profils" class="profil-article">
+          <div>
+            <div class="profil-desc">
+              <img v-bind:src="profil.picture" alt="Photo de profil de la personne" class="img-profil"/>
+              <span v-if="profil.premium" class="premium-badge">⭐️</span>
+              <div>
+
+                <p v-if="!isStreamerMode">{{profil.name}} {{profil.surname}}</p>
+                <p v-else>{{profil.name.charAt(0)}}... {{profil.surname.charAt(0)}}...</p>
+
+                <p v-if="!isStreamerMode">{{profil.age}} ans.</p>
+              </div>
+            </div>
+            <div class="social-media-container">
+                <p v-if="profil.socials != null">Réseaux Sociaux:</p>
+                <p v-if="profil.socials == null">Pas de réseaux sociaux associés.</p>
+                <a v-for="social in profil.socials" v-bind:href="social.socialLink" class="link-social"><i v-bind:class="social.socialIcon"></i>{{social.socialName}}</a>
+
+ 
+<!--               
+            <a v-bind:href="profil.linkTikTok" v-if="profil.linkTikTok !== ''" class="link-social"><i class="fa-brands fa-tiktok"></i>TikTok</a>
+            <a v-bind:href="profil.linkYTB" v-if="profil.linkYTB !== ''" class="link-social" ><i class="fa-brands fa-youtube"></i>Youtube</a>
+            <a v-bind:href="profil.linkTwitter" v-if="profil.linkTwitter !== ''" class="link-social"><i class="fa-brands fa-twitter"></i>Twitter</a>
+            <p v-else-if="profil.linkTikTok === '' && profil.linkTwitter === '' && profil.linkYTB === ''">Pas de réseaux sociaux associés.</p>
+ -->            
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      Vue.createApp({
+        setup() {
+          let isStreamerMode = Vue.ref(false)
+
+
+          let profils = Vue.ref([
+            {
+              name: "Jean",
+              surname: "Dupond",
+              picture: "images/person3.jpeg",
+              age: 36,
+              premium: false,
+              socials:{
+                tiktok:{
+                    socialLink: "https://tiktok.com",
+                    socialName: "TikTok",
+                    socialIcon: "fa-brands fa-tiktok"
+                },
+                youtube:{
+                    socialLink: "https://youtube.com",
+                    socialName: "YouTube",
+                    socialIcon: "fa-brands fa-youtube"
+                },
+                twitter:{
+                    socialLink: "https://twitter.com",
+                    socialName: "Twitter",
+                    socialIcon: "fa-brands fa-twitter"
+                }
+              }
+            },
+            {
+              name: "Benoit",
+              surname: "Legrand",
+              picture: "images/person2.jpeg",
+              age: 53,
+              premium: true,
+              socials:{
+                tiktok:{
+                    socialLink: "https://tiktok.com",
+                    socialName: "TikTok",
+                    socialIcon: "fa-brands fa-tiktok"
+                },
+                youtube:{
+                    socialLink: "https://youtube.com",
+                    socialName: "YouTube",
+                    socialIcon: "fa-brands fa-youtube"
+                },
+                twitter:{
+                    socialLink: "https://twitter.com",
+                    socialName: "Twitter",
+                    socialIcon: "fa-brands fa-twitter"
+                }
+              }
+            },
+            {
+              name: "Micheline",
+              surname: "Vachette",
+              picture: "images/person1.jpeg",
+              age: 71,
+              premium: true,
+              socials:{
+                tiktok:{
+                    socialLink: "https://tiktok.com",
+                    socialName: "TikTok",
+                    socialIcon: "fa-brands fa-tiktok"
+                }
+              }
+            },
+            {
+              name: "Elisa",
+              surname: "Vachette",
+              picture: "images/person4.jpeg",
+              age: 19,
+              premium: false,
+            },
+          ]);
+          return {
+            profils,
+            isStreamerMode
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
