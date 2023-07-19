@@ -8,6 +8,10 @@ p{
     margin: 0;
 }
 
+h1{
+    margin: 0;
+}
+
 .todo-list{
     display: flex;
     background-color: white;
@@ -45,4 +49,20 @@ p{
     padding-top: 20px;
     margin: 32px;
     height: 100%;
+}
+
+.tache-title{
+    margin-bottom: 24px;
+}
+
+.tache-text-submit{
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.tache-btn-submit{
+    height: 36px;
+    width: 15%;
+    margin-left: 10px
 }

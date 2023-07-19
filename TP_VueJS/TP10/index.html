@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KICÉKI VEUX MES PROFILS ???</title>
     <link rel="stylesheet" href="style.css" />
@@ -17,11 +17,13 @@
       
       <div class="tache-container">
         <div class="tache-after">
-          <h1>Vrello - Gestion des tâches</h1>
-          <p>Gérez vos tâches avec Vue.js</p>
+          <div class="tache-title">
+            <h1>Vrello - Gestion des tâches</h1>
+            <span>Gérez vos tâches avec Vue.js</span>
+          </div>
         <div>
-          <input type="text" name="tache-add" id="tache-add" v-model="userSaisie" :class="listTodos.includes(userSaisie) ? 'red-error' : ''">
-          <button @click="pushIntoTodosList(userSaisie)">Ajouter</button>
+          <input type="text" @keyup.enter="pushIntoTodosList(userSaisie)" name="tache-add" id="tache-add" v-model="userSaisie" :class="listTodos.includes(userSaisie) ? 'red-error' : ''" class="tache-text-submit">
+          <button @click="pushIntoTodosList(userSaisie)" class="tache-btn-submit" >Ajouter</button>
         </div>
         <div class="lists-container">
            
@@ -58,10 +60,7 @@
           const pushIntoTodosList = (e) => {
             if(!listTodos.value.includes(e)){
               listTodos.value.push(e)
-            }else{
-
             }
-            
           }
 
           const switchToFinished = (e, todo) => {
