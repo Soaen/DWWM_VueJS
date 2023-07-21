@@ -22,11 +22,11 @@ h1{
 
 .lists-container{
     display: flex;
-    width: 100%;
 }
 
 .list-solo{
     width: 50%;
+    overflow-y: scroll;
 }
 
 .red-error{
@@ -49,6 +49,7 @@ h1{
     padding-top: 20px;
     margin: 32px;
     height: 100%;
+    overflow: hidden;
 }
 
 .tache-title{
@@ -66,3 +67,4 @@ h1{
     width: 15%;
     margin-left: 10px
 }
+

@@ -29,22 +29,29 @@
            
           <div class="list-solo">
             <h2>A faire ({{listTodos.length}})</h2>
+            <div class="scroll-allowing">
               <div v-for="(todo, index) in listTodos" class="todo-list">
                 <p>{{todo}}</p>
-                <input type="checkbox" name="switchToFinished" id="switchToFinished" @click.prevent="switchToFinished(index, todo)">
+                  <input type="checkbox" name="switchToFinished" id="switchToFinished" @click.prevent="switchToFinished(index, todo)">
+
+                </div>
               </div>
-          </div>
+              </div>
+
 
           <div class="list-solo">
-          <h2>Terminées ({{listFinished.length}})</h2>
+            <h2>Terminées ({{listFinished.length}})</h2>
             <div v-for="(finished, index) in listFinished" class="todo-list">
               <p class="finished-task">{{finished}}</p>
-              <div>
+            <div>
                 <input type="checkbox" name="switchToFinished" id="switchToFinished" @click.prevent='' checked>
                 <button @click="deleteFromFinishedList(index)">Supprimer</button>
               </div>
             </div>
           </div>
+        </div>
+
+
         </div>
       </div>
       </div>
