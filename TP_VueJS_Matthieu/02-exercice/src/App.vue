@@ -6,10 +6,10 @@ const age = ref(0)
 const genre = ref('')
 const names = ref(['Laura', 'Antoine', 'Marie', 'Matthieu', 'Marine', 'Paolo', 'Anna', 'Jules'])
 
-  const generatePerson = () => {
-    name.value =  names.value[Math.floor(Math.random() * names.value.length)];
-    age.value = Math.floor(Math.random()  * 99 +1)
-  }
+const generatePerson = () => {
+  name.value =  names.value[Math.floor(Math.random() * names.value.length)];
+  age.value = Math.floor(Math.random()  * 99 +1)
+}
 
 </script>
 
@@ -31,8 +31,10 @@ const names = ref(['Laura', 'Antoine', 'Marie', 'Matthieu', 'Marine', 'Paolo', '
 
     <input type="text" v-model="name" v-bind:class="name.length > 15 ? 'error' : ''">
     <p class="error-msg" v-if="name.length >= 15">Maximum 15 caractères.</p>
+
     <input type="number" v-model="age" v-bind:class="age > 100 ? 'error' : ''">
     <p class="error-msg" v-if="age > 100 || age < 0">Votre âge doit-être contenu entre 0 et 100.</p>
+
     <select v-model="genre" :class="genre == 'Homme' ? 'homme-select' : genre == 'Femme' ? 'femme-select' : genre == 'Autre' ? 'autre-select' : ''">
       <option disabled selected>----</option>
       <option>Homme</option>
