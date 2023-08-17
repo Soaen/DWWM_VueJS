@@ -2,6 +2,7 @@
   import { ref } from 'vue';
   import Image from './components/Image.vue'
   import Recette from './components/Recette.vue'
+  import Computed from './components/Computed.vue'
 
   const count = ref(0)
 
@@ -10,7 +11,9 @@ const increment = (number) => count.value += number;
 </script>
 
 <template>
-  <div class="count-container">
+  <div class="home-container">
+
+    <div class="count-container">
     <h1>Hello Vue</h1>
     <h2> {{ count }}</h2>
     <div>
@@ -22,7 +25,12 @@ const increment = (number) => count.value += number;
     <Image/>
   </div>
 
-  <Recette/>
+  <Recette class="recette"/>
+
+  <Computed/>
+
+
+  </div>
 
 
 </template>
@@ -50,6 +58,17 @@ button:hover{
   flex-direction: column;
   border-right: white 2px solid;
   padding: 30px;
+}
+
+.recette{
+  border-right: white 2px solid;
+
+}
+
+.home-container{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
 }
 
 </style>
